@@ -3,85 +3,35 @@
     <title>Vote for all</title> 
     <link rel="shortcut icon" href="Label.ico">
 </head>
-<body style="background:#fff0ff">
+<body style="background:#ff9999">
 
     <script language="javascript" src="users.js"></script>
-    <script language="javascript" src="script.js"></script>
+    <script language="javascript" src="authorize.js"></script>
+    <script language="javascript" src="leaders.js"></script>
+    <script language="javascript" src="experts.js"></script>
+    <script language="javascript" src="friends.js"></script>
     <script language="javascript">
 
-function b(senderId){
-    id = senderId.substring(5,7);
-    str = '<h1 style="text-align:center">Для подтверждения введите пароль</h1>';
-    str += '<p style="text-align:center; font-size:larger">' + x[id][0];
-    str += '<br><img src = "pic/' + x[id][1] + '" width="141">';
-    str += '<br>Пароль: <input id="code" type="password" value="" />';
-    str += '<br><br><input type="button" style="font-size:larger" value="  Перейти к шагу 3: Выборы лучших!  " onclick="c(' + id + ', code.value)" />';
-    str += '</p>';
-
-    page.innerHTML = str;
+function finalize(){
+    page.innerHTML = r;
 }
 
-function c(id, pass){
-    y = [];
-    for (i=0; i<x.length ; i++){
-        if (i != id){ y.push(x[i])}
-    }
-
-    str = '<img src = "pic/' + x[id][1] + '" width="120"> <b> ' +  x[id][0] + ' выбирает 5 лидеров </b>';
-    str += '<div id="leaders"></div><br><hr>';
-
-    str += '<h1 style="text-align:center">Выбери лидеров!</h1>';
-    str += '<table border = "0"  cellpadding = "12" align="center"><tr>';
-    for (i=0; i<y.length ; i++){
-
-        str += '<td width="100"  align="center" ><div id="block' + i + '" onclick = "chosen_leader(' + id + ',y[' + i + '])">'
-        str += '<p> ' + y[i][0] + '\n';
-        str += '<p> <img src = "pic/' + y[i][1] + '" width="90">';
-        str += '</div></td>';
-
-        if (i%5 == 4){
-            str+= '</tr><tr>';
-        }
-    }
-    str += '</tr></table>';
-    page.innerHTML = str;
-}
-
-var l = 0;
-res_leaders = [];
-r ='';
-
-function chosen_leader(id, data){
-
-    if (l < 5){
-        str = ' <img src = "pic/' + data[1] + '" width="90">';
-        leaders.innerHTML += str;
-        l++;
-        r += x[id][1] + '-' + data[1] + '<br>';
-    };
-
-    if (l == 5){
-        leaders.innerHTML += '<input type="button" style="font-size:larger" value="  = Готово!!! =  " />';
-        leaders.innerHTML += '<input type="button" value=" Переиграть " />';
-        l++;
-    }
-
-    window.scrollTo(0,0);
-}
     </script>
 
-    <div id="page">
-        <h2 style="text-align:center">Правила пользования сервисом</h2>
-
-        <h3>Шаг 1. <font style="color:blue">Прочитать эту инструкцию</font></h3>
-        <h3>Шаг 2. <font style="color:green">Авторизоваться</font> - выбрать себя в списке участников и ввести ключ</h3>
-        <h3>Шаг 3. <font style="color:red">Проголосовать за друзей и коллег</font> в нескольких номинациях</h3>
-
-        <p style="text-align:center">
-            <input type='button' style="font-size:larger" value='  Перейти к шагу 2: Найти себя!  ' onclick="a()">
-        </p>
+    <br />
+    <div id="page" style="background:#ddffff; font-family:Arial;">
+        <br />
+        <h2 style="text-align:center">Инструкция по применению</h2>
+        <h3> &nbsp; Шаг 1. <font style="color:blue">Прочитать</font> эту инструкцию</h3>
+        <h3>&nbsp; Шаг 2. <font style="color:green">Найти себя</font>  в 
+        списке участников и ввести ключ</h3>
+        <h3>&nbsp; Шаг 3. <font style="color:brown">Проголосовать</font> за друзей и коллег в нескольких номинациях</h3>
+        <br />
+        <div style="text-align:center">
+            <input type='button' style="font-size:larger" value='   Перейти к шагу 2: Найти себя!    ' onclick="a()" />
+        </div>
+        <br />
     </div>
-
     
     
     <hr />
