@@ -10,8 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		users.js = users.js
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pics", "pics", "{C0FBA36E-159C-43A8-BD1E-A47FAE1A5417}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C0FBA36E-159C-43A8-BD1E-A47FAE1A5417} = {BE43AA69-770F-4D98-B5DB-AFD8F27F726B}
 	EndGlobalSection
 EndGlobal
