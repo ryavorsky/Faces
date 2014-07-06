@@ -9,7 +9,7 @@ function a() {
         str += '<p> <img src = "pic/' + x[i][1] + '" width="90">';
         str += '</div></td>';
 
-        if (i%7 == 6){
+        if (i%5 == 4){
             str+= '</tr><tr>';
         }
     }

@@ -27,7 +27,7 @@ function c(id, pass){
         if (i != id){ y.push(x[i])}
     }
 
-    str = '<img src = "pic/' + x[id][1] + '" width="90"> <b> ' +  x[id][0] + ' выбирает 5 лидеров </b>';
+    str = '<img src = "pic/' + x[id][1] + '" width="120"> <b> ' +  x[id][0] + ' выбирает 5 лидеров </b>';
     str += '<div id="leaders"></div><br><hr>';
 
     str += '<h1 style="text-align:center">Выбери лидеров!</h1>';
@@ -39,7 +39,7 @@ function c(id, pass){
         str += '<p> <img src = "pic/' + y[i][1] + '" width="90">';
         str += '</div></td>';
 
-        if (i%7 == 6){
+        if (i%5 == 4){
             str+= '</tr><tr>';
         }
     }
@@ -58,14 +58,15 @@ function chosen_leader(id, data){
         leaders.innerHTML += str;
         l++;
         r += x[id][1] + '-' + data[1] + '<br>';
-        window.scrollTo(0,0);
     };
 
     if (l == 5){
         leaders.innerHTML += '<input type="button" style="font-size:larger" value="  = Готово!!! =  " />';
-        leaders.innerHTML += '<input type="button" value="  - Переиграть -  " />';
+        leaders.innerHTML += '<input type="button" value=" Переиграть " />';
         l++;
     }
+
+    window.scrollTo(0,0);
 }
     </script>
 
