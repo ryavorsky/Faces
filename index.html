@@ -1,13 +1,33 @@
 <html>
 <head>
     <title>Vote for all</title> 
+    <link rel="shortcut icon" href="Label.ico">
 </head>
 <body style="background:#fff0ff">
 
     <script language="javascript" src="users.js"></script>
     <script language="javascript" src="script.js"></script>
+    <script language="javascript">
 
-    <div id="page" onmouseover="b(this,'red')" onmouseout="b(this,'blue')">
+function b(senderId){
+    id = senderId.substring(5,7);
+    str = '<h1 style="text-align:center">Для подтверждения введите пароль</h1>';
+    str += '<p style="text-align:center; font-size:larger">' + x[id][0];
+    str += '<br><img src = "' + x[id][1] + '" width="141">';
+    str += '<br>Пароль: <input id="code" type="password" value="" />';
+    str += '<br><br><input type="button" style="font-size:larger" value="  Перейти к шагу 3: Выборы лучших!  " onclick="c(' + id + ', code.value)" />';
+    str += '</p>';
+
+    page.innerHTML = str;
+}
+
+function c(id, pass){
+        alert(id + ' ' + pass);
+        y = x.splice(id, 1);
+}
+    </script>
+
+    <div id="page">
         <h2 style="text-align:center">Правила пользования сервисом</h2>
 
         <h3>Шаг 1. <font style="color:blue">Прочитать эту инструкцию</font></h3>
@@ -15,11 +35,14 @@
         <h3>Шаг 3. <font style="color:red">Проголосовать за друзей и коллег</font> в нескольких номинациях</h3>
 
         <p style="text-align:center">
-            <input type='button' value='Всё понятно. Начинаем! ПУСК!!!' onclick="a()" id='start'>
+            <input type='button' style="font-size:larger" value='  Перейти к шагу 2: Найти себя!  ' onclick="a()">
         </p>
     </div>
 
-    <div id="bottom" style="color:blue" onmouseover="b(this,'red')" onmouseout="b(this,'blue')">
+    
+    
+    <hr />
+    <div id="bottom" style="color:blue">
         Thanks for using our service.
     </div>
 </body>
