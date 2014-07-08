@@ -42,7 +42,8 @@ function chosen_leader(id, data){
         str = ' <img src = "pic/' + data[1] + '" width="90">';
         leaders.innerHTML += str;
         l++;
-        res_l += '<br>l;' + x[id][1] + ';' + data[1] + '\n';
+		d = new Date();
+        res_l += '<br>l;' + x[id][1] + ';' + data[1] + ';' + d.getTime() + '\n';
     };
 
     if (l == 5){

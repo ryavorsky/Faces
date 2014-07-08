@@ -40,7 +40,9 @@ function chosen_friend(id, data){
         str = ' <img src = "pic/' + data[1] + '" width="90">';
         leaders.innerHTML += str;
         f++;
-        res_f += '<br>f;' + x[id][1] + ';' + data[1] + '\n';
+		d = new Date();
+		t = d.getTime();
+        res_f += '<br>f;' + x[id][1] + ';' + data[1] + ';' + t + '\n';
     };
 
     if (f == 5){
