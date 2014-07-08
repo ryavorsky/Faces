@@ -5,24 +5,25 @@
 </head>
 <body style="background:#ff9999">
 
+    <script language="javascript" src="friends.js"></script>
     <script language="javascript" src="users.js"></script>
     <script language="javascript" src="authorize.js"></script>
     <script language="javascript" src="leaders.js"></script>
     <script language="javascript" src="experts.js"></script>
-    <script language="javascript" src="friends.js"></script>
     <script language="javascript">
+        var j = '';
 
 function finalize(){
-    page.innerHTML = r;
+    res = 'http://myvoice.1gb.ru/hello.php?l="' + res_l +'"&e="'+ res_e +'"&f="'+ res_f + '"';
+    window.location.href = res;
 }
-
     </script>
 
     <br />
     <div id="page" style="background:#ddffff; font-family:Arial;">
         <br />
         <h2 style="text-align:center">Инструкция по применению</h2>
-        <h3> &nbsp; Шаг 1. <font style="color:blue">Прочитать</font> эту инструкцию</h3>
+        <h3> &nbsp; Шаг 1. <font style="color:blue">Прочесть</font> эту инструкцию</h3>
         <h3>&nbsp; Шаг 2. <font style="color:green">Найти себя</font>  в 
         списке участников и ввести ключ</h3>
         <h3>&nbsp; Шаг 3. <font style="color:brown">Проголосовать</font> за друзей и коллег в нескольких номинациях</h3>
@@ -32,7 +33,6 @@ function finalize(){
         </div>
         <br />
     </div>
-    
     
     <hr />
     <div id="bottom" style="color:blue">

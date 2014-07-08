@@ -22,11 +22,12 @@ function a() {
 
 function authorize(senderId){
     id = senderId.substring(5,7);
-    str = '<h1 style="text-align:center">Для подтверждения введите пароль</h1>';
+    str = '<h1 style="text-align:center">Для подтверждения введите свой телефон или e-mail</h1>';
     str += '<p style="text-align:center; font-size:larger">' + x[id][0];
     str += '<br><img src = "pic/' + x[id][1] + '" width="141">';
-    str += '<br>Пароль: <input id="code" type="password" value="" />';
-    str += '<br><br><input type="button" style="font-size:larger" value="  Перейти к шагу 3: Выборы лучших!  " '
+    str += '<br>Ваш контактный телефон или e-mail: ';
+	str += '<br><input id="code" type="text" value=""/>';
+    str += '<br><br><input type="button" style="font-size:larger" value="  Перейти к шагу 3: Выборы лучших!  " ';
 	str += 'onclick="select_leaders(' + id + ')" />';
     str += '</p>';
 

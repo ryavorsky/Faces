@@ -27,12 +27,11 @@ function select_leaders(id){
     }
     str += '</tr></table></div>';
     page.innerHTML = str;
-    page.style.background="#ffcccc";
+    page.style.background="red";
 }
 
 var l = 0;
-res_leaders = [];
-r ='';
+res_l = '';
 
 //-----------------------------------------------------------------------------
 //  Display selected leaders in the page header
@@ -43,14 +42,15 @@ function chosen_leader(id, data){
         str = ' <img src = "pic/' + data[1] + '" width="90">';
         leaders.innerHTML += str;
         l++;
-        r += 'l:' + x[id][1] + '-' + data[1] + '<br>';
+        res_l += '<br>l;' + x[id][1] + ';' + data[1] + '\n';
     };
 
     if (l == 5){
 
         str = '<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" style="font-size:larger" value="  Да, это лидеры!  "';
 		str += 'onclick="select_experts(' + id + ')" />';
-        str += ' или  <input type="button" value="   Переиграть этот шаг  " />';
+        str += ' или  <input type="button" value="   Переиграть этот шаг  "';
+		str += ' onclick="l=0;res_l = \'\';select_leaders(' + id + ')"/>';
 
         leaders.innerHTML += str;
 		faces.innerHTML = '';

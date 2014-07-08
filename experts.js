@@ -33,6 +33,7 @@ function select_experts(id){
 //  Display selected experts in the page header
 //-----------------------------------------------------------------------------
 var e = 0;
+var res_e = '';
 
 function chosen_expert(id, data){
 
@@ -40,14 +41,16 @@ function chosen_expert(id, data){
         str = ' <img src = "pic/' + data[1] + '" width="90">';
         leaders.innerHTML += str;
         e++;
-        r += 'e:' + x[id][1] + '-' + data[1] + '<br>';
+        res_e += '<br>e;' + x[id][1] + ';' + data[1] + '\n';
     };
 
     if (e == 5){
 
-        str = '<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" style="font-size:larger" value="   Это точно эксперты!   "';
-		str += 'onclick="select_friends(' + id + ')" />';
-        str += ' или  <input type="button" value="   Переиграть   " />';
+        str = '<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;';
+		str += '<input type="button" style="font-size:larger" value="   Это точно эксперты!   " ';
+		str += ' onclick="select_friends(' + id + ')" />';
+        str += ' или  <input type="button" value="   Переиграть   " ';
+		str += ' onclick="e=0;res_e = \'\';select_experts(' + id + ')"/>';
 
         leaders.innerHTML += str;
 		faces.innerHTML = '';

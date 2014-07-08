@@ -1,10 +1,9 @@
-// JavaScript source code
 
 function select_friends(id){
     y = [];
     for (i=0; i<x.length ; i++){
         if (i != id){ y.push(x[i])}
-    }
+    };
 
     str = '<img src = "pic/' + x[id][1] + '" width="120"> <b> ' +  x[id][0] + ' выбирает 5 друзей: </b>';
     str += '<div id="leaders"></div><br><hr>';
@@ -23,7 +22,7 @@ function select_friends(id){
         if (i%5 == 4){
             str+= '</tr><tr>';
         }
-    }
+    };
     str += '</tr></table></div>';
     page.innerHTML = str;
     page.style.background="#aaaaff";
@@ -33,6 +32,7 @@ function select_friends(id){
 //  Display selected experts in the page header
 //-----------------------------------------------------------------------------
 var f = 0;
+var res_f = '';
 
 function chosen_friend(id, data){
 
@@ -40,14 +40,15 @@ function chosen_friend(id, data){
         str = ' <img src = "pic/' + data[1] + '" width="90">';
         leaders.innerHTML += str;
         f++;
-        r += 'f:' + x[id][1] + '-' + data[1] + '<br>';
+        res_f += '<br>f;' + x[id][1] + ';' + data[1] + '\n';
     };
 
     if (f == 5){
 
         str = '<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" style="font-size:larger" value="  Это настоящие друзья!  "';
-		str += 'onclick="finalize()" />';
-        str += ' или  <input type="button" value="   Переиграть   " />';
+		str += ' onclick="finalize()" />';
+        str += ' или  <input type="button" value="   Переиграть   " ';
+		str += ' onclick="f=0;res_f = \'\';select_friends(' + id + ')"/>';
 
         leaders.innerHTML += str;
 		faces.innerHTML = '';
